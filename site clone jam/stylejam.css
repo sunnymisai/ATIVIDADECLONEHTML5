@@ -1,0 +1,258 @@
+
+/* style.css - Tropical Punch CSS3 Edition */
+
+:root {
+  /* Cores - Mantidas com melhor saturação */
+  --bg-dark:       #020806;
+  --deep-jungle:   #004d3d;
+  --vibrant-leaf:  #00ff88;
+  --hibiscus:      #ff4d00;
+  --sunset-glow:   #ffaa00;
+  --ocean-blue:    #00e5ff;
+  --orchid:        #d400ff;
+  --text-white:    #f0fdfa;
+  
+  /* Variáveis de Design CSS3 */
+  --glass:         rgba(255, 255, 255, 0.03);
+  --glass-border:  rgba(255, 255, 255, 0.08);
+  --blur:          blur(12px);
+  --radius:        20px;
+  --transition:    all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --neon-shadow:   0 0 20px rgba(0, 255, 136, 0.2);
+}
+
+/* RESET MODERNO */
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 20px; 
+}
+
+/* HEADER COM GLASSMORPHISM */
+.top-bar { 
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: var(--blur); /* CSS3 Glass Effect */
+  padding: 15px 0; 
+  border-bottom: 1px solid var(--glass-border);
+  position: relative;
+  z-index: 1100;
+}
+
+.logo { 
+  font-family: 'Bebas Neue', sans-serif; 
+  font-size: 38px; 
+  color: #fff; 
+  text-decoration: none; 
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.logo span { 
+  color: var(--vibrant-leaf); 
+  filter: drop-shadow(0 0 8px var(--vibrant-leaf)); /* Filtro de brilho neon */
+}
+
+/* BOTÃO COM GRADIENTE ANIMADO */
+.btn-assine {
+  background: linear-gradient(45deg, var(--vibrant-leaf), var(--ocean-blue));
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px; /* CSS3 Pill Shape */
+  font-weight: 900;
+  cursor: pointer;
+  color: #000;
+  transition: var(--transition);
+  box-shadow: var(--neon-shadow);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.btn-assine:hover { 
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 255, 136, 0.4);
+}
+
+/* NAV COM STICKY E MÁSCARA */
+nav { 
+  background: var(--deep-jungle); 
+  position: sticky; 
+  top: 0; 
+  z-index: 1000; 
+  border-bottom: 4px solid var(--hibiscus);
+}
+
+.nav-inner { 
+  display: flex; 
+  overflow-x: auto; 
+  scrollbar-width: none; /* Firefox */
+  mask-image: linear-gradient(to right, black 90%, transparent); /* CSS3 Masking */
+}
+
+.nav-inner::-webkit-scrollbar { display: none; }
+
+.nav-inner a { 
+  padding: 20px 25px; 
+  color: #fff; 
+  text-decoration: none; 
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700; 
+  text-transform: uppercase; 
+  transition: var(--transition);
+}
+
+.nav-inner a:hover { 
+  background: rgba(255, 255, 255, 0.05); 
+  color: var(--ocean-blue); 
+}
+
+/* TICKER COM GRADIENTE CSS3 */
+.ticker-bar { 
+  background: linear-gradient(90deg, var(--hibiscus), var(--sunset-glow), var(--hibiscus));
+  background-size: 200% auto;
+  animation: gradientShift 5s linear infinite;
+  color: #000; 
+  padding: 12px 0; 
+  font-weight: 800; 
+  font-size: 13px;
+}
+
+/* CARDS COM EFEITOS DE HOVER AVANÇADOS */
+.card { 
+  position: relative; 
+  border-radius: var(--radius); 
+  overflow: hidden; 
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--blur);
+  transition: var(--transition);
+}
+
+.card:hover { 
+  transform: scale(1.02);
+  border-color: var(--vibrant-leaf);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.img-wrap { 
+  overflow: hidden;
+  clip-path: inset(0 0 0 0 round var(--radius)); /* CSS3 Clipping */
+}
+
+.img-wrap img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  transition: transform 0.6s ease;
+  filter: saturate(1.2) contrast(1.1);
+}
+
+.card:hover .img-wrap img { 
+  transform: scale(1.1); 
+  filter: saturate(1.5);
+}
+
+/* HERO SECTION */
+.card-hero { height: 550px; }
+
+.card-hero .info { 
+  position: absolute; 
+  bottom: 0; 
+  padding: 40px; 
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, transparent);
+}
+
+h1 { 
+  font-family: 'Bebas Neue', sans-serif; 
+  font-size: clamp(2rem, 5vw, 3.5rem); /* CSS3 Responsive Typography */
+  line-height: 0.95; 
+  margin: 15px 0; 
+}
+
+/* TAGS COM REFLEXO */
+.tag { 
+  background: var(--vibrant-leaf); 
+  color: #000; 
+  padding: 6px 14px; 
+  border-radius: 8px; 
+  font-weight: 900; 
+  font-family: 'Barlow Condensed', sans-serif;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.2);
+}
+
+.tag-orchid { background: var(--orchid); color: #fff; }
+.tag-ocean { background: var(--ocean-blue); color: #000; }
+
+/* GRID LAYOUTS */
+.hero-grid { 
+  display: grid; 
+  grid-template-columns: 1fr 380px; 
+  gap: 30px; 
+  margin: 40px 0; 
+}
+
+.sidebar { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 20px; 
+}
+
+.card-side { 
+  display: grid; 
+  grid-template-columns: 120px 1fr; 
+  gap: 15px; 
+  padding: 15px; 
+}
+
+.bottom-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+  gap: 30px; 
+  margin: 40px 0 80px; 
+}
+
+/* FOOTER COM TEXTURE */
+footer { 
+  padding: 80px 0; 
+  background: #000; 
+  border-top: 1px solid var(--glass-border);
+  text-align: center;
+  background-image: radial-gradient(circle at 50% 0%, var(--deep-jungle) 0%, transparent 70%);
+}
+
+.footer-brand { 
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  color: var(--vibrant-leaf);
+  letter-spacing: 4px;
+}
+
+/* RESPONSIVO COM CONTAINER QUERIES (Opcional/Moderno) */
+@media (max-width: 992px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .card-hero { height: 400px; }
+}

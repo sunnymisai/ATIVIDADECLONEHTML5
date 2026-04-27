@@ -139,3 +139,40 @@ body {
 .mini-card {
     border-bottom: 4px solid #ffb400; /* Borda mais grossa como na imagem */
 }
+/* 1. Efeito nos links da Nav-Bar (Futebol, Vôlei, etc) */
+.nav-bar ul li a {
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent; /* Reserva o espaço para a borda não "pular" */
+}
+
+.nav-bar ul li a:hover {
+    color: #ffb400; /* Amarelo UOL */
+    border-bottom: 2px solid #ffb400; /* Linha sutil abaixo do texto */
+}
+
+/* 2. Efeito nas ações de usuário (Assine, Email, Entrar) */
+.user-actions a {
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.user-actions a:hover {
+    color: #ffb400;
+    opacity: 0.8; /* Leve transparência para indicar o clique */
+}
+
+/* 3. Efeito nos Cards (Opcional, mas fica ótimo) */
+.small-card, .mini-card, .main-news {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.small-card:hover, .mini-card:hover {
+    transform: translateY(-5px); /* O card sobe levemente */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Sombra mais profunda */
+}
+
+.main-news:hover img {
+    transform: scale(1.05); /* Zoom sutil na imagem principal */
+    transition: transform 0.5s ease;
+}
