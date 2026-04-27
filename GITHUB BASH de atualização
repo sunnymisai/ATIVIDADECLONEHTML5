@@ -1,0 +1,10 @@
+Para selecionar todos os arquivos
+git add .
+    (o ponto significa tudo)
+
+Para rotular a alteração
+git commit -m "insira aqui a alteração"
+
+Para enviar para o servidor geral
+
+git push origin main
