@@ -1,6 +1,5 @@
 /* =============================================
-   style.css — Clone UOL Esporte
-   HTML5 + CSS3 externo
+   style.css — Clone UOL Esporte (Versão Estável)
    ============================================= */
 
 /* ---------- RESET & BASE ---------- */
@@ -14,24 +13,15 @@ body {
   font-family: 'Open Sans', Arial, sans-serif;
   background-color: #f0f0f0;
   color: #222;
-  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+ul { list-style: none; }
 
-img {
-  display: block;
-  max-width: 100%;
-}
-
-ul {
-  list-style: none;
-}
-
-/* ---------- HEADER ---------- */
+/* ---------- HEADER & NAV ---------- */
 .header {
   background-color: #ffffff;
   border-bottom: 1px solid #ddd;
@@ -46,377 +36,187 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 16px;
-  gap: 16px;
+  padding: 8px 16px;
 }
 
-/* Menu burger */
-.menu-btn {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: #333;
-  margin-right: 8px;
-}
+.logo-img { height: 38px; width: auto; }
 
-/* Logo */
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.logo-img {
-  height: 44px;
-  width: auto;
-}
-
-.logo-fallback {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  line-height: 1;
-  font-family: 'Oswald', sans-serif;
-}
-
-.logo-fallback strong {
-  font-size: 28px;
-  font-weight: 700;
-  color: #ff6600;
-}
-
-.logo-fallback small {
-  font-size: 9px;
-  letter-spacing: 2px;
-  color: #555;
-}
-
-/* Nav principal */
 .header-nav {
   display: flex;
-  gap: 24px;
-  align-items: center;
+  gap: 20px;
   flex: 1;
   justify-content: center;
 }
 
 .header-nav a {
-  font-size: 13px;
-  font-weight: 600;
-  color: #222;
-  white-space: nowrap;
-  transition: color 0.2s;
-}
-
-.header-nav a:hover {
-  color: #ff6600;
-}
-
-/* Área direita */
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.header-link {
-  font-size: 12px;
-  color: #444;
+  font-size: 0.8125rem;
   font-weight: 600;
   white-space: nowrap;
-  transition: color 0.2s;
-}
-
-.header-link:hover {
-  color: #ff6600;
 }
 
 .btn-assine {
   background-color: #ff6600;
   color: #fff;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 700;
-  padding: 8px 14px;
+  padding: 7px 14px;
   border-radius: 4px;
-  white-space: nowrap;
-  transition: background-color 0.2s;
-}
-
-.btn-assine:hover {
-  background-color: #e05500;
 }
 
 /* ---------- BARRA DE JOGOS ---------- */
 .jogos-bar {
   background-color: #fff;
-  border-bottom: 2px solid #e8e8e8;
+  border-bottom: 1px solid #d0d0d0;
 }
 
 .jogos-bar-inner {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 0 16px;
   overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.jogos-bar-inner::-webkit-scrollbar {
-  display: none;
+  padding: 0 16px;
 }
 
 .jogos-item {
-  font-size: 12px;
-  font-weight: 600;
-  color: #333;
-  padding: 10px 10px;
-  white-space: nowrap;
-  transition: color 0.2s;
-  border-right: 1px solid #eee;
-}
-
-.jogos-item:last-child {
-  border-right: none;
-}
-
-.jogos-item:hover {
-  color: #ff6600;
-}
-
-.jogos-item svg {
-  vertical-align: middle;
-  margin-right: 3px;
-}
-
-.seu-time {
-  color: #333;
-}
-
-.sublink {
-  color: #555;
-  font-size: 12px;
-  font-weight: 400;
-}
-
-.campeonatos {
-  font-weight: 600;
-}
-
-/* Placar ao vivo */
-.jogos-placar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
+  font-size: 0.75rem;
+  padding: 10px 12px;
   border-right: 1px solid #eee;
   white-space: nowrap;
 }
 
-.placar-badges {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  align-items: flex-start;
-}
-
-.badge-ao-vivo {
-  background-color: #e00;
-  color: #fff;
-  font-size: 8px;
-  font-weight: 700;
-  padding: 2px 4px;
-  border-radius: 2px;
-  letter-spacing: 0.5px;
-  line-height: 1.2;
-}
-
-.badge-comp {
-  font-size: 8px;
-  font-weight: 700;
-  color: #555;
-  letter-spacing: 0.3px;
-  text-transform: uppercase;
-  line-height: 1.2;
-}
-
-.placar-times {
-  font-size: 12px;
-  font-weight: 600;
-  color: #222;
-  display: flex;
-  align-items: center;
-  gap: 3px;
-}
-
-.placar-x {
-  color: #888;
-  font-size: 10px;
-}
-
-/* Mini escudos coloridos (círculos) */
-.escudo-circle {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.escudo-circle.red       { background-color: #cc0000; }
-.escudo-circle.red-dark  { background-color: #8b0000; border: 1px solid #cc0000; }
-.escudo-circle.orange    { background-color: #e55a00; }
-.escudo-circle.red-light { background-color: #e03030; }
-
-.escudo {
-  width: 16px;
-  height: 16px;
-  object-fit: contain;
-  display: inline-block;
-}
-
-/* ---------- MAIN ---------- */
+/* ---------- CONTAINER PRINCIPAL ---------- */
 .main {
-  max-width: 1200px;
+  max-width: 1200px; /* Limita a largura central do site */
   margin: 0 auto;
-  padding: 24px 16px 40px;
+  padding: 20px 16px 40px;
 }
 
-/* Título da seção */
 .section-title {
   text-align: center;
-  font-family: 'Oswald', 'Open Sans', sans-serif;
-  font-size: 32px;
-  font-weight: 500;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.75rem;
   letter-spacing: 6px;
-  color: #222;
-  margin-bottom: 28px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
 }
 
-/* ---------- DESTAQUE HERO ---------- */
+/* ---------- DESTAQUE HERO (O PAINEL AMARELO) ---------- */
 .destaque-hero {
-  background-color: #f5c800;
+  background-color: #FFD400;
+  position: relative; /* Necessário para posicionar a imagem absoluta dentro dele */
   display: flex;
-  align-items: stretch;
-  position: relative;
-  margin-bottom: 48px;
-  min-height: 300px;
+  align-items: center;
+  
+  /* EDITAR AQUI: Altura do bloco amarelo */
+  height: 500px; 
+  
+  /* EDITAR AQUI: Espaço abaixo para a imagem não atropelar o conteúdo seguinte */
+  margin-bottom: 70px; 
+  
+  /* Permite que a imagem "vaze" para fora das bordas */
+  overflow: visible; 
 }
 
 .destaque-texto {
-  flex: 1 1 55%;
-  padding: 36px 32px 36px 40px;
+  /* EDITAR AQUI: Largura da área de texto (ex: 55%, 60%) */
+  width: 58%; 
+  padding: 40px;
+  z-index: 2; /* Garante que o texto fique sempre à frente */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 16px;
+  gap: 15px;
 }
 
 .destaque-categoria {
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
   color: #333;
 }
 
 .destaque-titulo {
-  font-family: 'Oswald', 'Open Sans', sans-serif;
-  font-size: 30px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.1rem; /* Tamanho do título principal */
   font-weight: 700;
+  line-height: 1.1;
   color: #111;
-  line-height: 1.25;
 }
 
-.destaque-links {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.destaque-links li {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-.destaque-links li::before {
-  content: '';
-  display: inline-block;
-  width: 3px;
-  min-width: 3px;
-  height: 100%;
-  min-height: 18px;
-  background-color: #111;
-  margin-top: 2px;
-}
-
-.destaque-links a {
-  font-size: 13px;
-  color: #111;
-  line-height: 1.4;
-  transition: text-decoration 0.2s;
-}
-
-.destaque-links a:hover {
-  text-decoration: underline;
-}
-
-/* Imagem do destaque */
+/* ---------- IMAGEM VAZADA (O JOGADOR) ---------- */
 .destaque-imagem {
-  flex: 1 1 40%;
-  position: relative;
-  overflow: hidden;
-  max-width: 420px;
+  position: absolute;
+  right: 0; /* Cola no lado direito */
+  
+  /* EDITAR AQUI: Deslocamento para cima (vazamento no topo) */
+  top: 25px; 
+  
+  /* EDITAR AQUI: Altura total da imagem (deve ser maior que o painel amarelo) */
+  height: 450px; 
+  
+  /* EDITAR AQUI: Largura da imagem (deve complementar o destaque-texto) */
+  width: 42%; 
+  
+  z-index: 1;
 }
 
 .destaque-imagem img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  display: block;
+  object-fit: cover; /* Faz a imagem preencher o espaço sem achatar */
+  object-position: center top; /* Foca no topo da foto (rosto do jogador) */
+}
+
+/* ---------- LINKS SECUNDÁRIOS ---------- */
+.destaque-links {
+  margin-top: 10px;
+}
+
+.destaque-links li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  border-left: 3px solid #111; /* Barrinha preta lateral */
+  padding-left: 12px;
+}
+
+.destaque-links a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 /* ---------- AS MAIS LIDAS ---------- */
-.mais-lidas {
-  margin-top: 8px;
-}
-
 .mais-lidas-titulo {
-  font-family: 'Oswald', 'Open Sans', sans-serif;
-  font-size: 20px;
-  font-weight: 500;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
   letter-spacing: 3px;
-  color: #222;
   border-bottom: 2px solid #e0e0e0;
-  padding-bottom: 10px;
-  margin-bottom: 16px;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
-/* ---------- RESPONSIVO ---------- */
+/* ---------- RESPONSIVIDADE (MOBILE) ---------- */
 @media (max-width: 768px) {
-  .header-nav {
-    display: none;
-  }
-
-  .header-right .header-link {
-    display: none;
-  }
-
+  .header-nav { display: none; }
+  
   .destaque-hero {
-    flex-direction: column-reverse;
+    flex-direction: column-reverse; /* Inverte: Imagem em cima, texto embaixo */
+    height: 400;
+    margin-bottom: 20px;
   }
-
+  
   .destaque-imagem {
-    max-width: 100%;
-    height: 220px;
+    position: relative; /* No mobile, ela volta para o fluxo normal */
+    top: 0;
+    width: 100%;
+    height: 200px;
   }
-
-  .destaque-titulo {
-    font-size: 22px;
+  
+  .destaque-texto {
+    width: 100%;
+    padding: 20px;
   }
-
-  .section-title {
-    font-size: 24px;
-  }
+  
+  .destaque-titulo { font-size: 1.5rem; }
 }
